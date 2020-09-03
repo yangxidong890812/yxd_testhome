@@ -1,0 +1,91 @@
+
+
+欢迎使用 ai-webdriver-1.0.11
+
+版本完成时间: 15/4 2020
+
+
+更新内容: 修复图片偶尔比较失败的 Bug （感谢 QQ 595416200 提出的 Bug）
+
+
+
+
+
+使用本工具，您不需要写一行代码，仅提供最简单的参数（url）即可开始 UI 智能探索测试之旅。
+
+使用前请先安装 chrome 浏览器
+
+并在 browserDrivers 目录下配置相应的 chromedriver.exe
+
+
+
+必填参数:
+
+
+在 config/compulsory_config 文件中指定必填参数 url 以及 action，格式为：
+
+Action=MakingBaseline
+Url=https://gitbook.cn/gitchat/author/5cea0bfbb78cc870612d8bba
+
+
+本工具共支持三种 action:
+
+
+MakingBaseline: 作用是智能抓取页面所有的图像，也可以用于非测试目的。
+
+TestingBaseline: 作用则是根据 baseline 图像集 对指定 URL 进行图像探索与图像匹配测试
+
+MakingAndTestingBaseline: 作用是执行 MakingBaseline 后马上执行 TestingBaseline 
+
+
+
+使用效果：
+
+ 
+MakingBaseline ：在当前目录生成 baseline 图片集
+
+
+TestingBaseline ：根据 baseline 进行智能图像对比测试并在测试过程中生成 screenshots & diffResults，
+
+最后在当前目录生成 testReport.txt 测试报告
+
+
+
+
+
+可选参数:
+
+
+在 config/optional_config 中可以配置可选参数(若不需要设置参数则置空即可):
+
+
+UseMobileEmulation 表示是否要模拟移动端运行（True 为是，False 为不是）;
+
+MouseHoverCssLocators 表示你需要 ai-webdriver 尝试去悬停并记录图像的元素css定位方式，以英文冒号;分隔定位方式（如: li[name='关注公众号'];span[name='微信二维码']）
+
+SearchDepth 表示 ai-webdriver 的探索深度 （建议设为 1）
+
+
+
+运行日志可以在 logs 文件夹中查看。
+
+
+
+备注：程序启动较慢，不过不需要担心内存问题（常占内存理论上不超过100M） :) 
+
+
+杀毒软件可能会对 chromedriver.exe 报错，添加信任或自行重新下载即可。
+
+
+每个月末会更新密码, 密码可在 config/secret_key 中配置，最新密码在知识星球（AI测试前线）定期公布
+
+
+
+有任何需求欢迎找我聊天:
+
+QQ: 523314409
+
+微信号: shaoyuyishiwo,
+
+微信公众号: AI测试前线
+
